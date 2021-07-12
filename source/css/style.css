@@ -57,12 +57,32 @@ nav a:hover {
   color: white;
 }
 
-article {
+main {
+  display: flex;
+  justify-content: space-around;
+}
+
+aside {
   background-color: white;
-  margin: 1em 5em 0 5em;
+  margin: 1em 1em;
   padding: 1em;
   border: 1px solid black;
   border-radius: 10px;
+  text-align: justify;
+  max-width: 200px;
+}
+aside h2 {
+  text-align: center;
+  margin: 1em 0;
+}
+
+article {
+  background-color: white;
+  margin: 1em 1em;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: auto;
   height: 4500px;
 }
 article :nth-child(3) {
