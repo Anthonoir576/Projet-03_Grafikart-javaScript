@@ -31,7 +31,7 @@
             fake.style.height = rectangle.height + "px";
 
 
-            // FONCTION
+            // FONCTION 
 
             // ma condition si le nombre de scroll depasse selui de lelement alors, la position ce fixe, sinon elle s'enleve
             let onScroll = () => {
