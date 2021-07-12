@@ -12,6 +12,8 @@
     };
 
     let elements = document.querySelectorAll('[data-fixed]');
+
+
     for (let i = 0; i < elements.length; i++) {
 
         (function(element) {
@@ -30,6 +32,7 @@
             fake.style.width = rectangle.width + "px";
             fake.style.height = rectangle.height + "px";
 
+            // permet de gardé une marge au moment ou le aside deviens fixe
             let offset = element.getAttribute('data-offset')
 
             if (offset === null) {
@@ -38,7 +41,7 @@
 
             }
 
-            console.log(offset)
+
 
             // FONCTION 
 
@@ -57,7 +60,7 @@
                     // j'ajoute mon faux menu 
                     element.parentNode.insertBefore(fake, element);
 
-                } else if(scrollY() < top && aTilScroller) {
+                } else if (scrollY() < top && aTilScroller) {
 
                     element.classList.remove('fixed');
                     element.parentNode.removeChild(fake);

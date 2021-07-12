@@ -54,7 +54,6 @@ nav {
     background-color: white;
     padding: 0px;
     margin: 0em;
-    opacity: .7;
 
     & a  {
 
@@ -87,17 +86,11 @@ main {
 }
 
 aside {
-
-    background-color: white;
-    margin: 1em 0;
     
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, .6);
-
     text-align: justify;
 
-    width: 800px;
+    width: 25%;
+    height: 1200px;
 
     & h2 {
 
@@ -115,6 +108,23 @@ aside {
 
 }
 
+.aside {
+
+    background-color: white;
+    margin: 1em 1em;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, .6);
+
+}
+
+.sidebar {
+
+    position: relative;
+
+}
+
+
 article {
 
     
@@ -125,7 +135,7 @@ article {
     border-radius: 10px;
     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, .6);
 
-    width: 90%;
+    width: 75%;
     height: 4500px;
 
     & :nth-child(3) {
@@ -174,6 +184,6 @@ footer {
 .fixed {
 
     position: fixed;
-    top: 0;
+    opacity: 0.7;
 
 }
