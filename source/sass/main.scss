@@ -48,7 +48,7 @@ nav {
 
     display: flex;
     justify-content: space-around;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.699);
     background-color: white;
     padding: 0px;
     margin: 0em;
@@ -62,7 +62,7 @@ nav {
         color: inherit;
         text-decoration: inherit;
         padding: 10px 0;
-        border-left: 1px solid black;
+        border-left: 1px solid rgba(0, 0, 0, 0.699);
         
         width: 20vw;
         font-size: 20px;
@@ -88,10 +88,23 @@ article {
 
     height: 4500px;
 
+    & :nth-child(3) {
+
+        text-align: center;
+        margin: 2em 0;
+
+    }
+
     & h2 {
 
         margin-bottom: 2em;
         font-size: 2rem;
+
+    }
+
+    & p {
+
+        text-align: justify;
 
     }
 
