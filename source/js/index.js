@@ -17,19 +17,28 @@
         (function(element) {
 
             // recupere mon menu
-            let menu = document.querySelector('.menu');
+            //let menu = document.querySelector('.menu');//
             // fonction qui permet de recuperer le scroll de lelement et le scroolY deja effectuer
-            let top = menu.getBoundingClientRect().top + scrollY();
+            let top = element.getBoundingClientRect().top + scrollY();
             // dans lexemple du cours, sont element perd ca largeur, j'ai pas ce probleme avec le flex, mais je vais utilisé ca methode au cas ou si je venais a en avoir besoin 
-            let witdh = menu.getBoundingClientRect().witdh;
+            let witdh = element.getBoundingClientRect().witdh;
             // je cree une variable qui serra mon menu
-            let rectangle = menu.getBoundingClientRect();
+            let rectangle = element.getBoundingClientRect();
             // je cree un faux menu, pour remplacer celui qui serra fixé, ainsi evité le decallage 
             let fake = document.createElement('div');
             // je lui donne la largeur et la hauteur de mon menu
             fake.style.width = rectangle.width + "px";
             fake.style.height = rectangle.height + "px";
 
+            let offset = element.getAttribute('data-offset')
+
+            if (offset === null) {
+
+                offset = 0; 
+
+            }
+
+            console.log(offset)
 
             // FONCTION 
 
@@ -37,29 +46,31 @@
             let onScroll = () => {
 
                 // permet de voir si  j'ai deja cette classe
-                let aTilScroller = menu.classList.contains('fixed');
+                let aTilScroller = element.classList.contains('fixed');
 
-                if (scrollY() > top && !aTilScroller) {
+                if (scrollY() > top - offset && !aTilScroller) {
 
-                    menu.classList.add('fixed')
-                    menu.style.witdh = witdh + "px";
+                    element.classList.add('fixed')
+                    
+                    element.style.top = offset + "px";
+                    element.style.witdh = witdh + "px";
                     // j'ajoute mon faux menu 
-                    menu.parentNode.insertBefore(fake, menu);
+                    element.parentNode.insertBefore(fake, element);
 
                 } else if(scrollY() < top && aTilScroller) {
 
-                    menu.classList.remove('fixed');
-                    menu.parentNode.removeChild(fake);
+                    element.classList.remove('fixed');
+                    element.parentNode.removeChild(fake);
                 }
             };
 
             // si la page est redimensionner lelement fake a besoin detre adapter en largeur hauteur . cette fonction va permettre de le faire
             let onResize = function() {
 
-                menu.style.width = "auto"
-                menu.classList.remove('fixed');
+                element.style.width = "auto"
+                element.classList.remove('fixed');
                 fake.style.display = "none"
-                rectangle = menu.getBoundingClientRect()
+                rectangle = element.getBoundingClientRect()
                 top = rectangle.top + scrollY()
                 fake.style.width = rectangle.width + "px"
                 fake.style.height = rectangle.height + "px"
