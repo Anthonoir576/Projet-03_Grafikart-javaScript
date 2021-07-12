@@ -52,6 +52,7 @@ nav {
     background-color: white;
     padding: 0px;
     margin: 0em;
+    opacity: .7;
 
     & a  {
 
@@ -112,5 +113,14 @@ footer {
         padding: 10px;
 
     }
+
+}
+
+// ########## JS ##########
+
+.fixed {
+
+    position: fixed;
+    top: 0;
 
 }
